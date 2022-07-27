@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import Home from './Components/Home';
 import Create from './Components/Create';
-import Quiz from './Components/Quiz';
+import List from './Components/List';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,7 +14,7 @@ function App() {
         <Routes>
         <Route exact path="/" element={<Home />}/>
         <Route path='/create' element={<Create />}/>
-        <Route path='/quiz' element={<Quiz />}/>
+        <Route path='/list' element={<List />}/>
         </Routes>
       </Router>
     </div>
