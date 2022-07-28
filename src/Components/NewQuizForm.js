@@ -19,7 +19,7 @@ export default function NewQuizForm() {
         e.preventDefault()
         data.title = String(data.title)
         data.author = String(data.title)
-        data.questions[0] = data.questions[0]
+        // data.questions[0] = data.questions[0]
         data.questions[0].answer1.isCorrect = true
         data.questions[0].answer2.isCorrect = false
         data.questions[0].answer3.isCorrect = false
