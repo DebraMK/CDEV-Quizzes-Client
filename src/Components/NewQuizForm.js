@@ -40,6 +40,8 @@ export default function NewQuizForm() {
         }
     }
 
+    console.log("test")
+
     return (
         <form onSubmit={handleSubmit}>
             <input onChange={handleChange} required name="title" placeholder="quiz title" value={data.title}/>

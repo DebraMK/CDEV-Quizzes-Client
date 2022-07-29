@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import Home from './Components/Home';
-import Create from './Components/NewQuizForm';
+import NewQuizForm from './Components/NewQuizForm';
 import List from './Components/List';
 import Quiz from './Components/Quiz';
 
@@ -14,7 +14,7 @@ function App() {
       <Router>
         <Routes>
         <Route exact path="/" element={<Home />}/>
-        <Route path='/create' element={<Create />}/>
+        <Route path='/create' element={<NewQuizForm />}/>
         <Route path='/list' element={<List />}/>
         <Route path='/quiz/:id' element={<Quiz />}/>
 
