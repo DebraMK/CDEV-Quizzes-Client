@@ -6,19 +6,35 @@ const INIT_STATE = {
     author: '',
     questions: [],
 }
+const QUESTION_STATE = {
+    questionText: '',
+    answer1: {},
+    answer2: {},
+    answer3: {},
+    answer4: {},
+}
+
+const ANSWER_STATE = {
+    text: '',
+    isCorrect: false
+}
 
 export default function NewQuizForm() {
+    const [questionIndex, setQuestionIndex] = useState(0)
     const [data, setData] = useState(INIT_STATE)
+    const [question, setQuestion] = useState(QUESTION_STATE)
+    const [answer, setAnswer] = useState(ANSWER_STATE)
     const navigate = useNavigate()
 
     const handleChange = (e) => {
         setData({...data, [e.target.name]: e.target.value })
+        
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         data.title = String(data.title)
-        data.author = String(data.title)
+        data.author = String(data.author)
         // data.questions[0] = data.questions[0]
         data.questions[0].answer1.isCorrect = true
         data.questions[0].answer2.isCorrect = false
