@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 
 export default function Quiz() {
     const { id } = useParams()
+    const navigate = useNavigate()
     const [data, setData] = useState({})
     const [questions, setQuestions] = useState([])
 
     const [maxScore, setMaxScore] = useState(0)
     const [currentScore, setCurrentScore] = useState(0)
-    const [showScore, setShowScore] = useState(true)
+    const [showScore, setShowScore] = useState(false)
 
     //determine score and then set currentScore to it
     function figureScore(){
@@ -32,10 +33,40 @@ export default function Quiz() {
         }
         setCurrentScore(score)
     }
+    
+    //reset all checkboxes to unchecked
+    function resetCheckboxes() {
+        let checkboxes = document.querySelectorAll("input[type=checkbox]")
+        for (let i = 0; i < checkboxes.length; i++){
+            checkboxes[i].checked = false
+        }
+        setCurrentScore(0)
+    }
 
     const submitQuiz = (e) => {
-        // setShowScore(!showScore)
+        setShowScore(true)
         figureScore()
+    }
+
+    const resetQuiz = (e) => {
+        setShowScore(false)
+        resetCheckboxes()
+    }
+
+    const editQuiz = (e) => {
+
+    }
+
+    const deleteQuiz = async (e) => {
+        e.preventDefault()
+        const response = await fetch(`https://cdev-quizzes-server.herokuapp.com/quiz/${id}`, {
+            method: 'DELETE'
+        })
+        if (response.status !== 200) {
+            console.log(response.status)
+        } else {
+            navigate('/', {replace: true})
+        }
     }
 
     //fetch request for quiz data
@@ -43,7 +74,6 @@ export default function Quiz() {
         async function getQuiz() {
             const response = await fetch(`https://cdev-quizzes-server.herokuapp.com/quiz/${id}`)
             const data = await response.json()
-            console.log(data.questions)
             setData(data)
             setQuestions(data.questions)
             setMaxScore(data.questions.length)
@@ -76,13 +106,14 @@ export default function Quiz() {
         </div>
     )
 
-    
+    //TODO need to link edit page
     return (
         <div> 
             {display}
             <br></br>
             <div>
-                <Button onClick={submitQuiz}>Submit Quiz</Button>
+                <Button id="submit" onClick={submitQuiz}>Submit Quiz</Button>
+                <Button id="reset" onClick={resetQuiz}>Reset Quiz</Button>
                 {showScore?<h3 id="score">{currentScore} / {maxScore} = {parseFloat((currentScore/maxScore)*100).toFixed(2)}%</h3>:null}
             </div>
             <br></br>
@@ -90,7 +121,7 @@ export default function Quiz() {
             <br></br>
             <Button href="/" variant="primary">Return to Homepage</Button>
             <Button href="#" variant="warning">Edit Quiz</Button>
-            <Button href="#" variant="danger">Delete Quiz</Button>
+            <Button onClick={deleteQuiz} variant="danger">Delete Quiz</Button>
         </div>
     )
 }
