@@ -7,6 +7,7 @@ import Quiz from './Components/Quiz';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+//import NewQuizForm from './Components/NewQuizForm';
 
 function App() {
   return (

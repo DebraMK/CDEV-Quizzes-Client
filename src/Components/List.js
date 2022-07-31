@@ -1,5 +1,9 @@
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
 import { useEffect, useState } from 'react';
 
 export default function List () {
@@ -18,26 +22,26 @@ export default function List () {
 
     const display = data && data.map(quiz => {
         return (
-            <Nav.Item key={quiz._id}>
-                <Nav.Link href={`/quiz/${quiz._id}`} >{quiz.title}</Nav.Link>
-            </Nav.Item>
+            <Container fluid>
+                <Row>
+                    <Col>
+                        <Nav.Item key={quiz._id}>
+                            <Nav.Link href={`/quiz/${quiz._id}`} >{quiz.title}</Nav.Link>
+                        </Nav.Item>
+                    </Col>
+                </Row>
+            </Container>
         )
-    }) 
+    })
 
     return(
         <div className="homepage">
                 <header>
-                    <h1>Choose a Quiz</h1>
-                    <Button href="/" variant="primary">Return to Homepage</Button>
+                    <h1>Choose Your Challenge</h1>
                     <Nav>
                         {display}
-                        {/* <Nav.Item>
-                            <Nav.Link href="#">Quiz 1</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link href="#">Quiz 2</Nav.Link>
-                        </Nav.Item> */}
                     </Nav>
+                    <Button href="/" variant="primary">Return to Homepage</Button>
                 </header>
         </div>
     )
