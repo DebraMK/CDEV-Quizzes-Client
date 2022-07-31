@@ -6,6 +6,8 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import { useEffect, useState } from 'react';
 
+import '../CSS/List.css'
+
 export default function List () {
     const [data, setData] = useState([])  
 
@@ -35,10 +37,10 @@ export default function List () {
     })
 
     return(
-        <div className="homepage background textColor app">
+        <div className="homepage background textColor list">
                 <header>
                     <h1 >Choose Your Challenge</h1>
-                    <Nav>
+                    <Nav className='body'>
                         {display}
                     </Nav>
                     <Button  href="/" variant="primary">Return to Homepage</Button>
