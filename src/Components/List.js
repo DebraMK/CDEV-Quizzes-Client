@@ -39,11 +39,11 @@ export default function List () {
     return(
         <div className="homepage background textColor">
                 <header>
-                    <h1 >Choose Your Challenge</h1>
-                    <Nav className='body'>
+                    <h1>Choose Your Challenge</h1>
+                    <Nav>
                         {display}
                     </Nav>
-                    <Button  href="/" variant="primary">Return to Homepage</Button>
+                    <Button href="/" variant="primary">Return to Homepage</Button>
                 </header>
         </div>
     )
