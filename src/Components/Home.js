@@ -7,11 +7,11 @@ import Card from 'react-bootstrap/Card';
 
 export default function Home () {
     return(
-        <Container style={{ }}>
+        <Container style={{ fontFamily: 'fantasy' }}>
                 <header>
                     <h1>CDEV Quizzes</h1>
                     <h2>Test your knowledge!</h2>
-                    <p>Choose a category and a quiz to test how much you know.  Or, create your own quiz to challenge others!</p>
+                    <p>Click on Take A Quiz and choose your challenge.  Or click on Create A Quiz to add your own challenge for others!</p>
                 </header>  
             <Row>  
                 <Col> 
