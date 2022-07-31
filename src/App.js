@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import Home from './Components/Home';
-import NewQuizForm from './Components/NewQuizForm';
+import NewQuizForm from './Components/NewQuizForm2';
 import List from './Components/List';
 import Quiz from './Components/Quiz';
 
