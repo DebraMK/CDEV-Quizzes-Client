@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+<<<<<<< HEAD
 import './CSS/index.css';
+=======
+import './css/index.css';
+>>>>>>> befc968 (added styling to list.js)
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
