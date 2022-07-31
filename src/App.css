@@ -1,7 +1,9 @@
 .App {
   text-align: center;
-  background-color: ivory;
-  color: rgb(54, 12, 12)
+  background-color: paleturquoise;
+  color: rgb(54, 12, 12);
+  min-height: 100vh;
+
 }
 
 .App-header {
@@ -18,5 +20,7 @@
 .App-link {
   color: #61dafb;
 }
+
+
 
 
