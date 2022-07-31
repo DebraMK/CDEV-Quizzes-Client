@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+  background-color: ivory;
+  min-height: 100vh;
+}
+
+.App-header {
+  background-color: #2ccc5c;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.background {
+  background-image: url('../assets/QuizBackground.jpeg'); 
+  background-size: cover ;
+}
+
+.textColor {
+  color: rgb(223, 234, 157);
+}
+
+/* unvisited link */
+a:link {
+  color: whitesmoke ;
+}
+
+/* visited link */
+a:visited {
+  color: yellow;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}

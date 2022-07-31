@@ -35,13 +35,13 @@ export default function List () {
     })
 
     return(
-        <div className="homepage">
+        <div className="homepage background textColor app">
                 <header>
-                    <h1>Choose Your Challenge</h1>
+                    <h1 >Choose Your Challenge</h1>
                     <Nav>
                         {display}
                     </Nav>
-                    <Button href="/" variant="primary">Return to Homepage</Button>
+                    <Button  href="/" variant="primary">Return to Homepage</Button>
                 </header>
         </div>
     )

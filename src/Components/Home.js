@@ -11,7 +11,7 @@ export default function Home () {
                 <header>
                     <h1>CDEV Quizzes</h1>
                     <h2>Test your knowledge!</h2>
-                    <p>Choose a category and a quiz to text how much you know.  Or, create your own quiz to challenge others!</p>
+                    <p>Choose a category and a quiz to test how much you know.  Or, create your own quiz to challenge others!</p>
                 </header>  
             <Row>  
                 <Col> 
