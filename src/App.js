@@ -5,8 +5,9 @@ import NewQuizForm from './Components/NewQuizForm2';
 import List from './Components/List';
 import Quiz from './Components/Quiz';
 
-import './App.css';
+import './css/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+//import NewQuizForm from './Components/NewQuizForm';
 
 function App() {
   return (
