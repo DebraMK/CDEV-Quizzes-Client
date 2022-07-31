@@ -20,11 +20,6 @@
   color: #61dafb;
 }
 
-.background {
-  background-image: url('../assets/QuizBackground.jpeg'); 
-  background-size: cover ;
-}
-
 .textColor {
   color: rgb(223, 234, 157);
 }

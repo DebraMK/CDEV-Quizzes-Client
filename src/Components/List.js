@@ -37,7 +37,7 @@ export default function List () {
     })
 
     return(
-        <div className="homepage background textColor list">
+        <div className="homepage background textColor">
                 <header>
                     <h1 >Choose Your Challenge</h1>
                     <Nav className='body'>
