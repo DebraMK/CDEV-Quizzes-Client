@@ -7,7 +7,7 @@ export default function List () {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch('http://localhost:3001/quiz/all')
+            const response = await fetch('https://cdev-quizzes-server.herokuapp.com/quiz/all')
             console.log(response)
             const data = await response.json()
             console.log(data)

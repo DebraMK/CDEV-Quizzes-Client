@@ -9,7 +9,7 @@ export default function Quiz() {
 
     useEffect(() => {
         async function getQuiz() {
-            const response = await fetch(`http://localhost:3001/quiz/${id}`)
+            const response = await fetch(`https://cdev-quizzes-server.herokuapp.com/quiz/${id}`)
             const data = await response.json()
             console.log(data.questions)
             setData(data)
