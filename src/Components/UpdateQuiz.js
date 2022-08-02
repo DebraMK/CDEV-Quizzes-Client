@@ -53,12 +53,13 @@ export default function UpdateQuiz() {
      //when the user clicks the "next question" button
     function handleNextQuestion()
     {
-
+        
         questionsCopy[questionIndex] = question;
         console.log(questionsCopy)
         setQuiz({...quiz, questions: questionsCopy})
         console.log(quiz)
         setQuestionIndex(questionIndex+1)
+
     }
     function handlePreviousQuestion()
     {
