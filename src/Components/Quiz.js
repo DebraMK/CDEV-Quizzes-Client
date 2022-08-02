@@ -98,7 +98,7 @@ export default function Quiz() {
 
     //construct main display
     const display = data && (
-        <div>
+        <div style={{ color: 'white' }}>
             <h1>{data.title}</h1>
             <h3>Quiz by: {data.author}</h3>
             <p>Please check the box next to each correct answer, then press the Submit Quiz button.</p>
