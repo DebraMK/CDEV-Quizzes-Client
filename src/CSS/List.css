@@ -1,0 +1,10 @@
+.body {
+    margin: 10%;
+}
+
+.background {
+    background-image: url('../assets/QuizBackground.jpeg'); 
+    background-size: cover ;
+    min-height: 100vh;
+    text-align: center;
+  }
