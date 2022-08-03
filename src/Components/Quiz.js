@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 
+import '../CSS/List.css'
+
 export default function Quiz() {
     const { id } = useParams()
     const navigate = useNavigate()
@@ -100,7 +102,7 @@ export default function Quiz() {
     const display = data && (
         <div style={{ color: 'white' }}>
             <h1>{data.title}</h1>
-            <h3>Quiz by: {data.author}</h3>
+            <h3 className='list' >Quiz by: {data.author}</h3>
             <p>Please check the box next to each correct answer, then press the Submit Quiz button.</p>
             {questionsArray}
         </div>
@@ -108,20 +110,21 @@ export default function Quiz() {
 
     //TODO need to link edit page
     return (
-        <div> 
+        <div className='background'> 
             {display}
             <br></br>
+            <br></br>
+            <br></br>
             <div>
-                <Button id="submit" onClick={submitQuiz}>Submit Quiz</Button>
-                <Button id="reset" onClick={resetQuiz}>Reset Quiz</Button>
+                <Button className='B1' id="submit" onClick={submitQuiz}>Submit Quiz</Button>
+                <Button className='B1' id="reset" onClick={resetQuiz}>Reset Quiz</Button>
                 {showScore?<h3 id="score">{currentScore} / {maxScore} = {parseFloat((currentScore/maxScore)*100).toFixed(2)}%</h3>:null}
             </div>
             <br></br>
             <br></br>
-            <br></br>
-            <Button href="/" variant="primary">Return to Homepage</Button>
-            <Button href="#" variant="warning">Edit Quiz</Button>
-            <Button onClick={deleteQuiz} variant="danger">Delete Quiz</Button>
+            <Button className='B1' href="/" variant="primary">Return to Homepage</Button>
+            <Button className='B1' href="#" variant="warning">Edit Quiz</Button>
+            <Button className='B1' onClick={deleteQuiz} variant="danger">Delete Quiz</Button>
         </div>
     )
 }
