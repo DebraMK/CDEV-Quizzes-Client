@@ -22,3 +22,7 @@
 .B1 {
     margin-right: 4px;
    }
+
+li {
+ list-style: none;
+}

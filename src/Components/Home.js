@@ -15,9 +15,9 @@ export default function Home () {
                 </header>  
             <Row>  
                 <Col> 
-                    <Card className=''>
+                    <Card style={{ height: 220, backgroundColor: 'navy', alignItems: 'center' }}>
                         <Nav>
-                            <Nav.Link style={{ color: 'navy', fontFamily: 'fantasy', fontSize: '30px' }} href="/list">Choose A Quiz</Nav.Link>
+                            <Nav.Link style={{ color: 'yellow', fontFamily: 'fantasy', fontSize: '30px' }} href="/list">Choose A Quiz</Nav.Link>
                         </Nav>
                         <Card.Img variant="bottom" src="https://cdn.pixabay.com/photo/2020/09/23/07/53/quiz-5595288__480.jpg" />
                     </Card> 
