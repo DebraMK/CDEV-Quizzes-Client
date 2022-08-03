@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate} from 'react-router-dom'
+import '../CSS/List.css'
 
 
 const ANSWER_STATE = {
@@ -83,13 +84,16 @@ export default function NewQuizForm2() {
 
     return(
         <div>
-        <div>
+        <div className="homepage background textColor">
             <h1>Create a New Quiz!</h1>
             <form onSubmit = {handleSubmit}>
                 <input onChange ={handleChangeQuiz} required name = "title" type = "text" placeholder = "Quiz Title" value = {quiz.title}></input>
                 <input onChange ={handleChangeQuiz}  name = "author" type = "text" placeholder = "Quiz Author (Your name!)" value = {quiz.author}></input>
+            <br></br>
+            <br></br>
             <h2>Question {questionIndex +1 } </h2>
             <input onChange={handleChangeQuestion} required name ="questionText" type="text" placeholder="Question Text" value = {question.questionText}/>
+            <br></br>
             <input onChange={handleChangeAnswer} required name ="answer1" type="text" placeholder="Correct Answer" value = {question.answer1.text}/>
             <input onChange={handleChangeAnswer} required name ="answer2" type="text" placeholder="Incorrect Answer" value = {question.answer2.text}/>
             <input onChange={handleChangeAnswer} required name ="answer3" type="text" placeholder="Incorrect Answer" value = {question.answer3.text}/>
