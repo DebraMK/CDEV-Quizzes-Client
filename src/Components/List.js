@@ -40,10 +40,10 @@ export default function List () {
         <div className="homepage background textColor">
                 <header>
                     <h1 >Choose Your Challenge</h1>
-                    <Nav>
+                    <Nav className='list'>
                         {display}
                     </Nav>
-                    <Button  href="/" variant="primary">Return to Homepage</Button>
+                    <Button href="/" variant="primary">Return to Homepage</Button>
                 </header>
         </div>
     )
