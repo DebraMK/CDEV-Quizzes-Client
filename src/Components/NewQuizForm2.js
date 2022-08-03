@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate} from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
 
 
 const ANSWER_STATE = {
@@ -108,6 +109,7 @@ export default function NewQuizForm2() {
         <div>
             <h2>{question.questionText}</h2>
         </div>
+            <Button href="/" variant="primary">Return to Homepage</Button>
         </div>
     )
 }
