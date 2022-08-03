@@ -41,7 +41,7 @@ export default function UpdateQuiz() {
             const response = await fetch(`https://cdev-quizzes-server.herokuapp.com/quiz/${id}`)
             const data = await response.json()
             setQuiz(data)
-            console.log({...quiz})
+
             }
             getQuiz()
         }, [])
@@ -51,19 +51,7 @@ export default function UpdateQuiz() {
         setQuiz({...quiz, [e.target.name] : e.target.value})
     }
      //when the user clicks the "next question" button
-    function handleNextQuestion(e)
-    {
-        e.preventDefault()
-        questionsCopy[questionIndex] = question;
-        console.log(questionsCopy)
-        setQuiz({...quiz, questions: questionsCopy})
-        console.log(quiz)
-        setQuestionIndex(questionIndex+1)
-       
-        
-
-
-    }
+    
     function handlePreviousQuestion()
     {
         if(questionIndex > 0)
@@ -78,13 +66,25 @@ export default function UpdateQuiz() {
     }
     //handles changes to the Question Text field
     const handleChangeQuestion = (e) => {
-        setQuestion({...question, [e.target.name]: e.target.value })
+       
     }
     //handles changes to the answer text fields
     const handleChangeAnswer = (e) => {
         setQuestion({...question, [e.target.name]: {text: e.target.value, isCorrect: [e.target.name] == "answer1"}})
 
     }
+
+    //map over the quiz to display all questions
+    const listQuestions = quiz.questions.map((question, index) =>
+    <div key = {index}>
+        <h2>Question {index + 1} </h2>
+        <input onChange={handleChangeQuestion} required name ="questionText" type="text" placeholder="Question Text" value = {quiz.questions[index].questionText}/>
+        <input onChange={handleChangeAnswer} required name ="answer1" type="text" placeholder="Correct Answer" value = {question.answer1.text}/>
+        <input onChange={handleChangeAnswer} required name ="answer2" type="text" placeholder="Incorrect Answer" value = {question.answer2.text}/>
+        <input onChange={handleChangeAnswer} required name ="answer3" type="text" placeholder="Incorrect Answer" value = {question.answer3.text}/>
+        <input onChange={handleChangeAnswer} required name ="answer4" type="text" placeholder="Incorrect Answer" value = {question.answer4.text}/>
+    </div>
+)
 
 
     return(
@@ -93,19 +93,8 @@ export default function UpdateQuiz() {
             <h1>Update Your Quiz!</h1>
             <form>
                 <input onChange ={handleChangeQuiz} required name = "title" type = "text" placeholder = "Quiz Title" value = {quiz.title}></input>
-                <input onChange ={handleChangeQuiz}  name = "author" type = "text" placeholder = "Quiz Author (Your name!)" value = {quiz.author}></input>
-            <h2>Question {questionIndex +1 } </h2>
-            <input onChange={handleChangeQuestion} required name ="questionText" type="text" placeholder="Question Text" value = {quiz.questions[questionIndex].questionText}/>
-            <input onChange={handleChangeAnswer} required name ="answer1" type="text" placeholder="Correct Answer" value = {quiz.questions[questionIndex].answer1.text}/>
-            <input onChange={handleChangeAnswer} required name ="answer2" type="text" placeholder="Incorrect Answer" value = {quiz.questions[questionIndex].answer2.text}/>
-            <input onChange={handleChangeAnswer} required name ="answer3" type="text" placeholder="Incorrect Answer" value = {quiz.questions[questionIndex].answer3.text}/>
-            <input onChange={handleChangeAnswer} required name ="answer4" type="text" placeholder="Incorrect Answer" value = {quiz.questions[questionIndex].answer4.text}/>
-            <button onClick = {handlePreviousQuestion}>
-                Previous Question
-            </button>
-            <button onClick = {handleNextQuestion}>
-                Next Question
-            </button>
+                <input onChange ={handleChangeQuiz}  name = "author" type = "text" placeholder = "Quiz Author (Your name!)" value = {quiz.author}></input>        
+                {listQuestions}
             <button type="submit">
                 Submit Quiz!
             </button>

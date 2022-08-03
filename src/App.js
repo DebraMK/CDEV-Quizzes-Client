@@ -4,7 +4,7 @@ import Home from './Components/Home';
 import NewQuizForm from './Components/NewQuizForm2';
 import List from './Components/List';
 import Quiz from './Components/Quiz';
-import UpdateQuiz from './Components/UpdateQuiz';
+import UpdateQuiz from './Components/UpdateQuiz2';
 
 import './CSS/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
