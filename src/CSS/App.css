@@ -24,17 +24,14 @@
   color: rgb(223, 234, 157);
 }
 
-/* unvisited link */
-a:link {
-  color: whitesmoke ;
-}
-
-/* visited link */
 a:visited {
   color: yellow;
 }
-
-/* mouse over link */
+a:link {
+  color: whitesmoke;
+}
 a:hover {
   color: hotpink;
 }
+
+/*# sourceMappingURL=App.css.map */

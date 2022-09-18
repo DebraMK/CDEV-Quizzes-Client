@@ -1,0 +1,45 @@
+//colors
+$textColor: rgb(223, 234, 157);
+$bgColor: ivory;
+$defaultColor: whitesmoke;
+$headerBg: #2ccc5c;
+$headerColor: white;
+$appLinkColor: #61dafb;
+
+.App {
+    text-align: center;
+    background-color: $bgColor;
+    color: $defaultColor;
+    min-height: 100vh;
+  }
+  
+  .App-header {
+    background-color: $headerBg;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: $headerColor;
+  }
+  
+  .App-link {
+    color: $appLinkColor;
+  }
+  
+  .textColor {
+    color: $textColor;
+  }
+
+a {
+    &:visited {
+        color: yellow;
+    }
+    &:link {
+        color: $defaultColor ;
+    }
+    &:hover {
+        color: hotpink;
+    }
+}

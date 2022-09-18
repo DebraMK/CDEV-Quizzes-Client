@@ -1,28 +1,30 @@
 .body {
-    margin: 20%;
+  margin: 20%;
 }
 
 .background {
-    background-image: url('../Assets/QuizBackground.jpg'); 
-    background-size: cover;
-    min-height: 100vh;
-    min-width: 100vw;
-    text-align: center;
-  }
+  background-image: url("../Assets/QuizBackground.jpg");
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+  text-align: center;
+}
 
 .header {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .list {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 /* buttons */
 .B1 {
-    margin-right: 4px;
-   }
+  margin-right: 4px;
+}
 
 li {
- list-style: none;
+  list-style: none;
 }
+
+/*# sourceMappingURL=List.css.map */
